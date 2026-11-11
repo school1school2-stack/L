@@ -295,6 +295,7 @@
         // مخزن العلاقات (هنا فقط تلصق أي علاقة جديدة في المكان المحدد بالأسفل)
         // =========================================================================
         const relationsData = [
+            {
                 title: "1. أصوات الكائنات الحية",
                 icon: "fa-paw",
                 badgeColor: "bg-blue-500 text-white",
@@ -798,6 +799,7 @@
                     }
                 ]
             },
+            {
                 title: "5. الوظائف والمهام",
                 icon: "fa-gears",
                 badgeColor: "bg-emerald-500 text-white",
@@ -1301,7 +1303,1015 @@
                     }
                 ]
             },
+            {
+                title: "9. السبب والنتيجة",
+                icon: "fa-diagram-project",
+                badgeColor: "bg-pink-500 text-white",
+                borderColor: "border-pink-400",
+                textColor: "text-pink-700",
+                desc: "حدث أو فعل أولي يسبب بطريقة حتمية أو منطقية وقوع النتيجة الثانية.",
+                arrowPattern: { start: "السبب الأول", relation: "يؤدي حتماً إلى ➔", end: "النتيجة المترتبة" },
+                example: "فيروس ➔ مرض",
+                analyses: [
+                    { pair: "إهمال ➔ رسوب", type: "ورقة 1", note: "الإهمال يسبب الرسوب." },
+                    { pair: "سرعة ➔ حادث", type: "ورقة 2", note: "السرعة تسبب الحادث." }
+                ],
+                quizzes: [
+                    {
+                        question: "قحط : مجاعة",
+                        arrowStr: "قحط ➔ يسبب ➔ مجاعة",
+                        options: [
+                            { text: "أ. طوفان : غرق", correct: true, reason: "صحيحة! الطوفان سبب يترتب عليه الغرق." },
+                            { text: "ب. زلزال : أرض", correct: false, reason: "خاطئة! حدث ومكانه." },
+                            { text: "ج. شتاء : برد", correct: false, reason: "خاطئة! فصل وصفته." },
+                            { text: "د. نجاح : دراسة", correct: false, reason: "خاطئة! نتيجة وسبب (معكوس)." }
+                        ],
+                        explanation: "القحط يسبب المجاعة والطوفان يسبب الغرق."
+                    },
+                    {
+                        question: "إهمال : رسوب",
+                        arrowStr: "إهمال ➔ يؤدي إلى ➔ رسوب",
+                        options: [
+                            { text: "أ. مدرسة : معلم", correct: false, reason: "خاطئة! مكان ومن فيه." },
+                            { text: "ب. اجتهاد : تفوق", correct: true, reason: "صحيحة! الاجتهاد يؤدي إلى التفوق." },
+                            { text: "ج. اختبار : قلق", correct: false, reason: "خاطئة! اقتران شعوري." },
+                            { text: "د. كسل : نوم", correct: false, reason: "خاطئة! تلازم." }
+                        ],
+                        explanation: "الإهمال يسبب الرسوب والاجتهاد يسبب التفوق."
+                    },
+                    {
+                        question: "فيروس : مرض",
+                        arrowStr: "فيروس ➔ يسبب ➔ مرض",
+                        options: [
+                            { text: "أ. طبيب : دواء", correct: false, reason: "خاطئة! شخص وما يصفه." },
+                            { text: "ب. صحة : عافية", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "ج. شرارة : حريق", correct: true, reason: "صحيحة! الشرارة تسبب الحريق." },
+                            { text: "د. مستشفى : علاج", correct: false, reason: "خاطئة! مكان ووظيفته." }
+                        ],
+                        explanation: "الفيروس يسبب المرض والشرارة تسبب الحريق."
+                    },
+                    {
+                        question: "سرعة : حادث",
+                        arrowStr: "سرعة ➔ تسبب ➔ حادث",
+                        options: [
+                            { text: "أ. تهور : ندم", correct: true, reason: "صحيحة! التهور يسبب الندم." },
+                            { text: "ب. سيارة : طريق", correct: false, reason: "خاطئة! وسيلة ومكان سيرها." },
+                            { text: "ج. إشارة : توقف", correct: false, reason: "خاطئة! تنبيه واستجابة." },
+                            { text: "د. حزام : أمان", correct: false, reason: "خاطئة! أداة ووظيفة." }
+                        ],
+                        explanation: "السرعة تسبب الحادث والتهور يسبب الندم."
+                    },
+                    {
+                        question: "تمرين : لياقة",
+                        arrowStr: "تمرين ➔ يؤدي إلى ➔ لياقة",
+                        options: [
+                            { text: "أ. ملعب : رياضة", correct: false, reason: "خاطئة! مكان وممارسة." },
+                            { text: "ب. قراءة : ثقافة", correct: true, reason: "صحيحة! القراءة تؤدي إلى الثقافة." },
+                            { text: "ج. تعب : راحة", correct: false, reason: "خاطئة! تضاد وحاجة." },
+                            { text: "د. غذاء : ماء", correct: false, reason: "خاطئة! فئة واحدة." }
+                        ],
+                        explanation: "التمرين يؤدي إلى اللياقة والقراءة تؤدي إلى الثقافة."
+                    },
+                    {
+                        question: "زلزال : دمار",
+                        arrowStr: "زلزال ➔ ينتج عنه ➔ دمار",
+                        options: [
+                            { text: "أ. بركان : حمم", correct: false, reason: "خاطئة! مصدر وما يخرج منه." },
+                            { text: "ب. غضب : خطأ", correct: true, reason: "صحيحة! الغضب يسبب الوقوع في الخطأ." },
+                            { text: "ج. بناء : تشييد", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "د. جبل : صخر", correct: false, reason: "خاطئة! كل وجزء." }
+                        ],
+                        explanation: "الزلزال ينتج عنه دمار والغضب ينتج عنه خطأ."
+                    },
+                    {
+                        question: "استغفار : مغفرة",
+                        arrowStr: "استغفار ➔ سبب لـ ➔ مغفرة",
+                        options: [
+                            { text: "أ. دعاء : إجابة", correct: true, reason: "صحيحة! الدعاء سبب للإجابة." },
+                            { text: "ب. صلاة : مسجد", correct: false, reason: "خاطئة! عبادة ومكانها." },
+                            { text: "ج. ذنب : معصية", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "د. صيام : رمضان", correct: false, reason: "خاطئة! عبادة وزمانها." }
+                        ],
+                        explanation: "الاستغفار سبب للمغفرة والدعاء سبب للإجابة."
+                    },
+                    {
+                        question: "جوع : أكل",
+                        arrowStr: "جوع ➔ يدفع إلى ➔ أكل",
+                        options: [
+                            { text: "أ. طعام : شبع", correct: false, reason: "خاطئة! سبب ونتيجة مباشرة." },
+                            { text: "ب. عطش : شرب", correct: true, reason: "صحيحة! العطش يدفع الإنسان إلى الشرب." },
+                            { text: "ج. ماء : بئر", correct: false, reason: "خاطئة! شيء ومكانه." },
+                            { text: "د. مائدة : كرسي", correct: false, reason: "خاطئة! اقتران." }
+                        ],
+                        explanation: "الجوع يدفع للأكل والعطش يدفع للشرب."
+                    },
+                    {
+                        question: "مطر : عشب",
+                        arrowStr: "مطر ➔ يسبب نمو ➔ عشب",
+                        options: [
+                            { text: "أ. سحاب : برق", correct: false, reason: "خاطئة! اقتران في السماء." },
+                            { text: "ب. ربيع : فصل", correct: false, reason: "خاطئة! نوع وفئة." },
+                            { text: "ج. علم : نهضة", correct: true, reason: "صحيحة! العلم يسبب النهضة." },
+                            { text: "د. شمس : قمر", correct: false, reason: "خاطئة! فئة واحدة." }
+                        ],
+                        explanation: "المطر يسبب العشب والعلم يسبب النهضة."
+                    },
+                    {
+                        question: "ظلم : ثورة",
+                        arrowStr: "ظلم ➔ يولد ➔ ثورة",
+                        options: [
+                            { text: "أ. عدل : أمان", correct: true, reason: "صحيحة! العدل يولد الأمان والاستقرار." },
+                            { text: "ب. حاكم : قصر", correct: false, reason: "خاطئة! شخص ومكانه." },
+                            { text: "ج. قانون : دستور", correct: false, reason: "خاطئة! ترادف وتقارب." },
+                            { text: "د. حرية : قيد", correct: false, reason: "خاطئة! تضاد." }
+                        ],
+                        explanation: "الظلم يسبب الثورة والعدل يسبب الأمان."
+                    }
+                ]
             },
+            {
+                title: "10. الترادف والتطابق",
+                icon: "fa-equals",
+                badgeColor: "bg-amber-400 text-slate-900",
+                borderColor: "border-amber-300",
+                textColor: "text-amber-800",
+                desc: "التطابق اللغوي المعجمي التام حيث تؤدي الكلمتان نفس المعنى تماماً.",
+                arrowPattern: { start: "الكلمة الأولى", relation: "تساوي في المعنى ➔", end: "الكلمة المرادفة" },
+                example: "مخافة ➔ خشية",
+                analyses: [
+                    { pair: "فوز ➔ انتصار", type: "ورقة 1", note: "الفوز هو الانتصار." },
+                    { pair: "غنى ➔ ثراء", type: "ورقة 2", note: "الغنى هو الثراء." }
+                ],
+                quizzes: [
+                    {
+                        question: "حسام : سيف",
+                        arrowStr: "حسام ➔ مرادف لـ ➔ سيف",
+                        options: [
+                            { text: "أ. ليث : أسد", correct: true, reason: "صحيحة! الليث من أسماء الأسد (ترادف)." },
+                            { text: "ب. رمح : درع", correct: false, reason: "خاطئة! أسلحة مختلفة." },
+                            { text: "ج. قطة : نمر", correct: false, reason: "خاطئة! فصيلة واحدة وليسا مرادفين." },
+                            { text: "د. جبل : تلة", correct: false, reason: "خاطئة! تدرج في الحجم." }
+                        ],
+                        explanation: "الحسام مرادف السيف والليث مرادف الأسد."
+                    },
+                    {
+                        question: "فوز : انتصار",
+                        arrowStr: "فوز ➔ يساوي في المعنى ➔ انتصار",
+                        options: [
+                            { text: "أ. هزيمة : تراجع", correct: false, reason: "خاطئة! سبب ونتيجة." },
+                            { text: "ب. إخفاق : فشل", correct: true, reason: "صحيحة! الإخفاق هو الفشل (ترادف)." },
+                            { text: "ج. مباراة : ملعب", correct: false, reason: "خاطئة! حدث ومكانه." },
+                            { text: "د. كفاح : راحة", correct: false, reason: "خاطئة! تضاد." }
+                        ],
+                        explanation: "الفوز مرادف الانتصار والإخفاق مرادف الفشل."
+                    },
+                    {
+                        question: "مخافة : خشية",
+                        arrowStr: "مخافة ➔ مرادف لـ ➔ خشية",
+                        options: [
+                            { text: "أ. شجاعة : إقدام", correct: false, reason: "خاطئة! صفة ونتيجتها." },
+                            { text: "ب. طمأنينة : قلق", correct: false, reason: "خاطئة! تضاد." },
+                            { text: "ج. بهجة : سرور", correct: true, reason: "صحيحة! البهجة هي السرور (ترادف)." },
+                            { text: "د. حزن : بكاء", correct: false, reason: "خاطئة! سبب ونتيجة." }
+                        ],
+                        explanation: "المخافة مرادف الخشية والبهجة مرادف السرور."
+                    },
+                    {
+                        question: "غنى : ثراء",
+                        arrowStr: "غنى ➔ مرادف لـ ➔ ثراء",
+                        options: [
+                            { text: "أ. فقر : إملاق", correct: true, reason: "صحيحة! الإملاق هو الفقر الشديد (ترادف)." },
+                            { text: "ب. مال : تجارة", correct: false, reason: "خاطئة! وسيلة ومهنة." },
+                            { text: "ج. كرم : بخل", correct: false, reason: "خاطئة! تضاد." },
+                            { text: "د. دينار : درهم", correct: false, reason: "خاطئة! عملات." }
+                        ],
+                        explanation: "الغنى مرادف الثراء والفقر مرادف الإملاق."
+                    },
+                    {
+                        question: "جود : كرم",
+                        arrowStr: "جود ➔ مرادف لـ ➔ كرم",
+                        options: [
+                            { text: "أ. عطاء : منع", correct: false, reason: "خاطئة! تضاد." },
+                            { text: "ب. شح : بخل", correct: true, reason: "صحيحة! الشح هو البخل (ترادف)." },
+                            { text: "ج. ضيف : مضيف", correct: false, reason: "خاطئة! تقابل." },
+                            { text: "د. إحسان : ثواب", correct: false, reason: "خاطئة! سبب ونتيجة." }
+                        ],
+                        explanation: "الجود مرادف الكرم والشح مرادف البخل."
+                    },
+                    {
+                        question: "سريع : عاجل",
+                        arrowStr: "سريع ➔ مرادف لـ ➔ عاجل",
+                        options: [
+                            { text: "أ. بطيء : متأخر", correct: false, reason: "خاطئة! سبب ونتيجة." },
+                            { text: "ب. وقت : ساعة", correct: false, reason: "خاطئة! كل وأداة قياسه." },
+                            { text: "ج. وئيد : بطيء", correct: true, reason: "صحيحة! الوئيد هو البطيء المتمهل (ترادف)." },
+                            { text: "د. حركة : سكون", correct: false, reason: "خاطئة! تضاد." }
+                        ],
+                        explanation: "السريع مرادف العاجل والوئيد مرادف البطيء."
+                    },
+                    {
+                        question: "رقاد : نوم",
+                        arrowStr: "رقاد ➔ مرادف لـ ➔ نوم",
+                        options: [
+                            { text: "أ. يقظة : انتباه", correct: true, reason: "صحيحة! اليقظة هي الانتباه (ترادف)." },
+                            { text: "ب. ليل : فجر", correct: false, reason: "خاطئة! تدرج زمني." },
+                            { text: "ج. سرير : وسادة", correct: false, reason: "خاطئة! كل وجزء." },
+                            { text: "د. تعب : نشاط", correct: false, reason: "خاطئة! تضاد." }
+                        ],
+                        explanation: "الرقاد مرادف النوم واليقظة مرادف الانتباه."
+                    },
+                    {
+                        question: "سقم : مرض",
+                        arrowStr: "سقم ➔ مرادف لـ ➔ مرض",
+                        options: [
+                            { text: "أ. دواء : صيدلية", correct: false, reason: "خاطئة! شيء ومكانه." },
+                            { text: "ب. برء : شفاء", correct: true, reason: "صحيحة! البرء هو الشفاء من المرض (ترادف)." },
+                            { text: "ج. ألم : صبر", correct: false, reason: "خاطئة! حالة وما يقابلها." },
+                            { text: "د. طبيب : مريض", correct: false, reason: "خاطئة! معالج ومُعالَج." }
+                        ],
+                        explanation: "السقم مرادف المرض والبرء مرادف الشفاء."
+                    },
+                    {
+                        question: "هلاك : فناء",
+                        arrowStr: "هلاك ➔ مرادف لـ ➔ فناء",
+                        options: [
+                            { text: "أ. حياة : موت", correct: false, reason: "خاطئة! تضاد." },
+                            { text: "ب. خلود : بقاء", correct: true, reason: "صحيحة! الخلود هو البقاء الدائم (ترادف)." },
+                            { text: "ج. بناء : هدم", correct: false, reason: "خاطئة! تضاد." },
+                            { text: "د. بداية : نهاية", correct: false, reason: "خاطئة! تضاد." }
+                        ],
+                        explanation: "الهلاك مرادف الفناء والخلود مرادف البقاء."
+                    },
+                    {
+                        question: "ثناء : مدح",
+                        arrowStr: "ثناء ➔ مرادف لـ ➔ مدح",
+                        options: [
+                            { text: "أ. هجاء : ذم", correct: true, reason: "صحيحة! الهجاء هو الذم (ترادف)." },
+                            { text: "ب. شكر : نكران", correct: false, reason: "خاطئة! تضاد." },
+                            { text: "ج. لسان : كلام", correct: false, reason: "خاطئة! عضو ووظيفة." },
+                            { text: "د. قصيدة : بيت", correct: false, reason: "خاطئة! كل وجزء." }
+                        ],
+                        explanation: "الثناء مرادف المدح والهجاء مرادف الذم."
+                    }
+                ]
+            },
+            {
+                title: "11. التضاد والعكس",
+                icon: "fa-arrows-rotate",
+                badgeColor: "bg-teal-500 text-white",
+                borderColor: "border-teal-400",
+                textColor: "text-teal-700",
+                desc: "علاقة التقابل المعاكس بين كلمتين متعاكستين تماماً في المعنى أو الصفة.",
+                arrowPattern: { start: "الكلمة / الصفة", relation: "عكسها تماماً هو ➔", end: "الصفة المعاكسة" },
+                example: "علم ➔ جهل",
+                analyses: [
+                    { pair: "ليل ➔ نهار", type: "ورقة 1", note: "تقابل زمني متعاكس." },
+                    { pair: "تواضع ➔ كبر", type: "ورقة 2", note: "التواضع يضاده الكبر." }
+                ],
+                quizzes: [
+                    {
+                        question: "شجاعة : جبن",
+                        arrowStr: "شجاعة ➔ عكسها ➔ جبن",
+                        options: [
+                            { text: "أ. كرم : بخل", correct: true, reason: "صحيحة! الكرم ضده البخل (تضاد)." },
+                            { text: "ب. صداقة : وفاء", correct: false, reason: "خاطئة! اقتران إيجابي." },
+                            { text: "ج. طاعة : احترام", correct: false, reason: "خاطئة! تقارب في المعنى." },
+                            { text: "د. قسوة : عقاب", correct: false, reason: "خاطئة! سبب ونتيجة." }
+                        ],
+                        explanation: "الشجاعة ضدها الجبن والكرم ضده البخل."
+                    },
+                    {
+                        question: "علم : جهل",
+                        arrowStr: "علم ➔ عكسه ➔ جهل",
+                        options: [
+                            { text: "أ. كتاب : مكتبة", correct: false, reason: "خاطئة! شيء ومكانه." },
+                            { text: "ب. نور : ظلام", correct: true, reason: "صحيحة! النور ضده الظلام (تضاد)." },
+                            { text: "ج. معلم : طالب", correct: false, reason: "خاطئة! علاقة تعليمية." },
+                            { text: "د. فهم : استيعاب", correct: false, reason: "خاطئة! ترادف." }
+                        ],
+                        explanation: "العلم ضده الجهل والنور ضده الظلام."
+                    },
+                    {
+                        question: "ليل : نهار",
+                        arrowStr: "ليل ➔ عكسه ➔ نهار",
+                        options: [
+                            { text: "أ. شمس : ضياء", correct: false, reason: "خاطئة! مصدر وصفة." },
+                            { text: "ب. قمر : نجوم", correct: false, reason: "خاطئة! فئة واحدة." },
+                            { text: "ج. صيف : شتاء", correct: true, reason: "صحيحة! الصيف ضده الشتاء (تقابل وتضاد)." },
+                            { text: "د. فجر : صباح", correct: false, reason: "خاطئة! تدرج زمني." }
+                        ],
+                        explanation: "الليل ضده النهار والصيف ضده الشتاء."
+                    },
+                    {
+                        question: "تواضع : كبر",
+                        arrowStr: "تواضع ➔ عكسه ➔ كبر",
+                        options: [
+                            { text: "أ. صدق : كذب", correct: true, reason: "صحيحة! الصدق ضده الكذب (تضاد)." },
+                            { text: "ب. أمانة : خيانة", correct: false, reason: "خاطئة! كلاهما تضاد، لكن (صدق : كذب) أكثر شيوعاً ومباشرة في الخيارات." },
+                            { text: "ج. حلم : أناة", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "د. غرور : تكبر", correct: false, reason: "خاطئة! ترادف." }
+                        ],
+                        explanation: "التواضع ضده الكبر والصدق ضده الكذب."
+                    },
+                    {
+                        question: "قوة : ضعف",
+                        arrowStr: "قوة ➔ عكسها ➔ ضعف",
+                        options: [
+                            { text: "أ. نشاط : حيوية", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "ب. صحة : مرض", correct: true, reason: "صحيحة! الصحة ضدها المرض (تضاد)." },
+                            { text: "ج. عضلات : جسم", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "د. رياضة : لياقة", correct: false, reason: "خاطئة! سبب ونتيجة." }
+                        ],
+                        explanation: "القوة ضدها الضعف والصحة ضدها المرض."
+                    },
+                    {
+                        question: "عدل : ظلم",
+                        arrowStr: "عدل ➔ عكسه ➔ ظلم",
+                        options: [
+                            { text: "أ. قاضي : حكم", correct: false, reason: "خاطئة! شخص ووظيفته." },
+                            { text: "ب. حق : باطل", correct: true, reason: "صحيحة! الحق ضده الباطل (تضاد)." },
+                            { text: "ج. إنصاف : مساواة", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "د. سجن : مجرم", correct: false, reason: "خاطئة! مكان ومن فيه." }
+                        ],
+                        explanation: "العدل ضده الظلم والحق ضده الباطل."
+                    },
+                    {
+                        question: "إقدام : إحجام",
+                        arrowStr: "إقدام ➔ عكسه ➔ إحجام",
+                        options: [
+                            { text: "أ. تقدم : تراجع", correct: true, reason: "صحيحة! التقدم ضده التراجع (تضاد)." },
+                            { text: "ب. جري : ركض", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "ج. هدف : مرمى", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "د. سرعة : عجلة", correct: false, reason: "خاطئة! ترادف." }
+                        ],
+                        explanation: "الإقدام ضده الإحجام والتقدم ضده التراجع."
+                    },
+                    {
+                        question: "ربح : خسارة",
+                        arrowStr: "ربح ➔ عكسه ➔ خسارة",
+                        options: [
+                            { text: "أ. بيع : شراء", correct: true, reason: "صحيحة! البيع ضده الشراء (تضاد)." },
+                            { text: "ب. تاجر : سوق", correct: false, reason: "خاطئة! شخص ومكانه." },
+                            { text: "ج. مال : ثروة", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "د. سلعة : ثمن", correct: false, reason: "خاطئة! شيء وقيمته." }
+                        ],
+                        explanation: "الربح ضده الخسارة والبيع ضده الشراء."
+                    },
+                    {
+                        question: "أعلى : أسفل",
+                        arrowStr: "أعلى ➔ عكسه ➔ أسفل",
+                        options: [
+                            { text: "أ. قمة : سفح", correct: true, reason: "صحيحة! القمة أعلى الجبل والسفح أسفله (تضاد)." },
+                            { text: "ب. سماء : نجم", correct: false, reason: "خاطئة! كل وجزء." },
+                            { text: "ج. جبل : تل", correct: false, reason: "خاطئة! تدرج." },
+                            { text: "د. صعود : ارتفاع", correct: false, reason: "خاطئة! ترادف." }
+                        ],
+                        explanation: "الأعلى ضده الأسفل والقمة ضدها السفح."
+                    },
+                    {
+                        question: "يسر : عسر",
+                        arrowStr: "يسر ➔ عكسه ➔ عسر",
+                        options: [
+                            { text: "أ. سهولة : بساطة", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "ب. صعوبة : مشقة", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "ج. فرج : ضيق", correct: true, reason: "صحيحة! الفرج ضده الضيق (تضاد)." },
+                            { text: "د. صبر : احتساب", correct: false, reason: "خاطئة! اقتران." }
+                        ],
+                        explanation: "اليسر ضده العسر والفرج ضده الضيق."
+                    }
+                ]
+            },
+            {
+                title: "12. المكانية والاحتواء",
+                icon: "fa-box-archive",
+                badgeColor: "bg-orange-500 text-white",
+                borderColor: "border-orange-400",
+                textColor: "text-orange-700",
+                desc: "وعاء أو مكان حفظ الغرض لحمايته أو تنظيمه.",
+                arrowPattern: { start: "الوعاء / الحافظة", relation: "تحفظ وتضم داخلها ➔", end: "المحتوى المظروف" },
+                example: "محفظة ➔ نقود",
+                analyses: [
+                    { pair: "حقيبة ➔ كتب", type: "ورقة 1", note: "الحقيبة لحفظ الكتب." },
+                    { pair: "ظرف ➔ رسالة", type: "ورقة 2", note: "الظرف يحوي الرسالة." }
+                ],
+                quizzes: [
+                    {
+                        question: "غمد : سيف",
+                        arrowStr: "غمد ➔ يحفظ داخله ➔ سيف",
+                        options: [
+                            { text: "أ. كنانة : سهام", correct: true, reason: "صحيحة! الكنانة وعاء تحفظ فيه السهام." },
+                            { text: "ب. درع : جندي", correct: false, reason: "خاطئة! أداة وقاية ومستخدمها." },
+                            { text: "ج. حبر : قلم", correct: false, reason: "خاطئة! محتوى ووعاء (اتجاه معكوس)." },
+                            { text: "د. كتاب : صفحة", correct: false, reason: "خاطئة! كل وجزء." }
+                        ],
+                        explanation: "الغمد يحفظ السيف والكنانة تحفظ السهام."
+                    },
+                    {
+                        question: "محفظة : نقود",
+                        arrowStr: "محفظة ➔ تحفظ داخلها ➔ نقود",
+                        options: [
+                            { text: "أ. بنك : موظف", correct: false, reason: "خاطئة! مكان ومن يعمل فيه." },
+                            { text: "ب. حقيبة : كتب", correct: true, reason: "صحيحة! الحقيبة تحفظ داخلها الكتب." },
+                            { text: "ج. دينار : عملة", correct: false, reason: "خاطئة! نوع وفئة." },
+                            { text: "د. جيب : ثوب", correct: false, reason: "خاطئة! جزء وكل." }
+                        ],
+                        explanation: "المحفظة تحفظ النقود والحقيبة تحفظ الكتب."
+                    },
+                    {
+                        question: "ظرف : رسالة",
+                        arrowStr: "ظرف ➔ يحفظ داخله ➔ رسالة",
+                        options: [
+                            { text: "أ. بريد : ساعي", correct: false, reason: "خاطئة! شيء ومن يوصله." },
+                            { text: "ب. طابع : ورقة", correct: false, reason: "خاطئة! جزء يوضع على الورقة." },
+                            { text: "ج. علبة : هدية", correct: true, reason: "صحيحة! العلبة تحفظ داخلها الهدية." },
+                            { text: "د. قلم : ظرف", correct: false, reason: "خاطئة! لا علاقة احتواء." }
+                        ],
+                        explanation: "الظرف يحوي الرسالة والعلبة تحوي الهدية."
+                    },
+                    {
+                        question: "خزانة : ملابس",
+                        arrowStr: "خزانة ➔ تحفظ داخلها ➔ ملابس",
+                        options: [
+                            { text: "أ. مكتبة : كتب", correct: true, reason: "صحيحة! المكتبة تحفظ داخلها الكتب." },
+                            { text: "ب. ثوب : قماش", correct: false, reason: "خاطئة! منتج وأصله." },
+                            { text: "ج. غرفة : باب", correct: false, reason: "خاطئة! كل وجزء." },
+                            { text: "د. خياط : مقص", correct: false, reason: "خاطئة! صاحب مهنة وأداته." }
+                        ],
+                        explanation: "الخزانة تحفظ الملابس والمكتبة تحفظ الكتب."
+                    },
+                    {
+                        question: "كأس : ماء",
+                        arrowStr: "كأس ➔ يحتوي داخله ➔ ماء",
+                        options: [
+                            { text: "أ. زجاج : رمل", correct: false, reason: "خاطئة! منتج وأصله." },
+                            { text: "ب. طبق : طعام", correct: true, reason: "صحيحة! الطبق يحتوي داخله الطعام." },
+                            { text: "ج. عطش : ارتواء", correct: false, reason: "خاطئة! تضاد." },
+                            { text: "د. نهر : بحر", correct: false, reason: "خاطئة! مسطحات مائية." }
+                        ],
+                        explanation: "الكأس يحوي الماء والطبق يحوي الطعام."
+                    },
+                    {
+                        question: "ثلاجة : أطعمة",
+                        arrowStr: "ثلاجة ➔ تحفظ داخلها ➔ أطعمة",
+                        options: [
+                            { text: "أ. مطبخ : فرن", correct: false, reason: "خاطئة! كل وجزء." },
+                            { text: "ب. برودة : ثلج", correct: false, reason: "خاطئة! صفة ومصدرها." },
+                            { text: "ج. مستودع : بضائع", correct: true, reason: "صحيحة! المستودع يحفظ داخله البضائع." },
+                            { text: "د. جوع : شبع", correct: false, reason: "خاطئة! تضاد." }
+                        ],
+                        explanation: "الثلاجة تحفظ الأطعمة والمستودع يحفظ البضائع."
+                    },
+                    {
+                        question: "سجن : مجرم",
+                        arrowStr: "سجن ➔ مكان احتجاز ➔ مجرم",
+                        options: [
+                            { text: "أ. قفص : عصفور", correct: true, reason: "صحيحة! القفص مكان حبس واحتواء العصفور." },
+                            { text: "ب. شرطي : أمن", correct: false, reason: "خاطئة! شخص ووظيفته." },
+                            { text: "ج. قاضي : عدل", correct: false, reason: "خاطئة! شخص وصفته." },
+                            { text: "د. جريمة : عقاب", correct: false, reason: "خاطئة! سبب ونتيجة." }
+                        ],
+                        explanation: "السجن يحبس المجرم والقفص يحبس العصفور."
+                    },
+                    {
+                        question: "إطار : صورة",
+                        arrowStr: "إطار ➔ يحيط ويحفظ ➔ صورة",
+                        options: [
+                            { text: "أ. مصور : عدسة", correct: false, reason: "خاطئة! شخص وأداة." },
+                            { text: "ب. سور : حديقة", correct: true, reason: "صحيحة! السور يحيط ويحفظ الحديقة." },
+                            { text: "ج. جدار : سقف", correct: false, reason: "خاطئة! أجزاء المبنى." },
+                            { text: "د. ألوان : رسم", correct: false, reason: "خاطئة! أداة وفن." }
+                        ],
+                        explanation: "الإطار يحيط بالصورة والسور يحيط بالحديقة."
+                    },
+                    {
+                        question: "صندوق : مجوهرات",
+                        arrowStr: "صندوق ➔ يحفظ داخله ➔ مجوهرات",
+                        options: [
+                            { text: "أ. ذهب : فضة", correct: false, reason: "خاطئة! معادن." },
+                            { text: "ب. قفل : مفتاح", correct: false, reason: "خاطئة! تلازم." },
+                            { text: "ج. خزينة : وثائق", correct: true, reason: "صحيحة! الخزينة تحفظ داخلها الوثائق." },
+                            { text: "د. خاتم : الماس", correct: false, reason: "خاطئة! مصنوع ومادته." }
+                        ],
+                        explanation: "الصندوق يحفظ المجوهرات والخزينة تحفظ الوثائق."
+                    },
+                    {
+                        question: "مقلمة : أقلام",
+                        arrowStr: "مقلمة ➔ تحفظ داخلها ➔ أقلام",
+                        options: [
+                            { text: "أ. ممحاة : مسطرة", correct: false, reason: "خاطئة! أدوات مدرسية." },
+                            { text: "ب. حافظة : أوراق", correct: true, reason: "صحيحة! الحافظة تحفظ داخلها الأوراق." },
+                            { text: "ج. كتابة : قراءة", correct: false, reason: "خاطئة! مهارات لغوية." },
+                            { text: "د. طالب : فصل", correct: false, reason: "خاطئة! شخص ومكانه." }
+                        ],
+                        explanation: "المقلمة تحفظ الأقلام والحافظة تحفظ الأوراق."
+                    }
+                ]
+            },
+            {
+                title: "17. الوظيفة والعضو/الآلة (عكسي)",
+                icon: "fa-sliders",
+                badgeColor: "bg-emerald-600 text-white",
+                borderColor: "border-emerald-400",
+                textColor: "text-emerald-700",
+                desc: "علاقة عكسية تبدأ بالوظيفة أو المهمة (اليمين) ثم العضو أو الآلة التي تؤديها (اليسار).",
+                arrowPattern: { start: "الوظيفة / المهمة", relation: "يؤديها ويختص بها ➔", end: "العضو / الآلة" },
+                example: "تنفس ➔ رئة",
+                analyses: [
+                    { pair: "رؤية ➔ عين", type: "ورقة 1", note: "الرؤية وظيفة العين [وظيفة ➔ عضو]." },
+                    { pair: "قطع ➔ سكين", type: "ورقة 2", note: "القطع وظيفة السكين [وظيفة ➔ آلة]." }
+                ],
+                quizzes: [
+                    {
+                        question: "سمع : أذن",
+                        arrowStr: "سمع ➔ هو وظيفة ➔ أذن",
+                        options: [
+                            { text: "أ. مشي : رجل", correct: true, reason: "صحيحة! المشي هو وظيفة الرجل (وظيفة ➔ عضو)." },
+                            { text: "ب. رجل : مشي", correct: false, reason: "خاطئة! الاتجاه معكوس (عضو ➔ وظيفة)." },
+                            { text: "ج. خاتم : يد", correct: false, reason: "خاطئة! شيء ومكان لبسه." },
+                            { text: "د. صدر : قلب", correct: false, reason: "خاطئة! مكان وعضو بداخله." }
+                        ],
+                        explanation: "السمع وظيفة الأذن والمشي وظيفة الرجل."
+                    },
+                    {
+                        question: "رؤية : عين",
+                        arrowStr: "رؤية ➔ هي وظيفة ➔ عين",
+                        options: [
+                            { text: "أ. رمش : جفن", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "ب. شم : أنف", correct: true, reason: "صحيحة! الشم وظيفة الأنف." },
+                            { text: "ج. أنف : شم", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. قراءة : نظارة", correct: false, reason: "خاطئة! النظارة وسيلة مساعدة وليست عضواً." }
+                        ],
+                        explanation: "الرؤية وظيفة العين والشم وظيفة الأنف."
+                    },
+                    {
+                        question: "تذوق : لسان",
+                        arrowStr: "تذوق ➔ هو وظيفة ➔ لسان",
+                        options: [
+                            { text: "أ. أسنان : فم", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "ب. تفكير : عقل", correct: true, reason: "صحيحة! التفكير وظيفة العقل." },
+                            { text: "ج. عقل : تفكير", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. شعر : رأس", correct: false, reason: "خاطئة! غطاء ومغطى." }
+                        ],
+                        explanation: "التذوق وظيفة اللسان والتفكير وظيفة العقل."
+                    },
+                    {
+                        question: "تنفس : رئة",
+                        arrowStr: "تنفس ➔ هو وظيفة ➔ رئة",
+                        options: [
+                            { text: "أ. هضم : معدة", correct: true, reason: "صحيحة! الهضم وظيفة المعدة." },
+                            { text: "ب. معدة : هضم", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. أكسجين : هواء", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "د. شريان : دم", correct: false, reason: "خاطئة! مسار ومحتوى." }
+                        ],
+                        explanation: "التنفس وظيفة الرئة والهضم وظيفة المعدة."
+                    },
+                    {
+                        question: "قص : مقص",
+                        arrowStr: "قص ➔ هو وظيفة ➔ مقص",
+                        options: [
+                            { text: "أ. خياطة : قماش", correct: false, reason: "خاطئة! القماش مادة تُخاط." },
+                            { text: "ب. كي : مكواة", correct: true, reason: "صحيحة! الكي وظيفة المكواة." },
+                            { text: "ج. مكواة : كي", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. كتابة : ورقة", correct: false, reason: "خاطئة! فعل ومكانه." }
+                        ],
+                        explanation: "القص وظيفة المقص والكي وظيفة المكواة."
+                    },
+                    {
+                        question: "توقيت : ساعة",
+                        arrowStr: "توقيت ➔ هو وظيفة ➔ ساعة",
+                        options: [
+                            { text: "أ. اتجاه : بوصلة", correct: true, reason: "صحيحة! تحديد الاتجاه وظيفة البوصلة." },
+                            { text: "ب. بوصلة : اتجاه", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. ثانية : دقيقة", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "د. أسبوع : يوم", correct: false, reason: "خاطئة! كل وجزء." }
+                        ],
+                        explanation: "التوقيت وظيفة الساعة وتحديد الاتجاه وظيفة البوصلة."
+                    },
+                    {
+                        question: "فتح : مفتاح",
+                        arrowStr: "فتح ➔ هو وظيفة ➔ مفتاح",
+                        options: [
+                            { text: "أ. جدار : باب", correct: false, reason: "خاطئة! كل وجزء." },
+                            { text: "ب. إغلاق : قفل", correct: true, reason: "صحيحة! الإغلاق وظيفة القفل." },
+                            { text: "ج. قفل : إغلاق", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. صلابة : معدن", correct: false, reason: "خاطئة! صفة وموصوف." }
+                        ],
+                        explanation: "الفتح وظيفة المفتاح والإغلاق وظيفة القفل."
+                    },
+                    {
+                        question: "إضاءة : مصباح",
+                        arrowStr: "إضاءة ➔ هي وظيفة ➔ مصباح",
+                        options: [
+                            { text: "أ. ليل : ظلام", correct: false, reason: "خاطئة! زمان وصفته." },
+                            { text: "ب. تبريد : مكيف", correct: true, reason: "صحيحة! التبريد وظيفة المكيف." },
+                            { text: "ج. مكيف : تبريد", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. قمر : شمس", correct: false, reason: "خاطئة! فئة واحدة." }
+                        ],
+                        explanation: "الإضاءة وظيفة المصباح والتبريد وظيفة المكيف."
+                    },
+                    {
+                        question: "تنظيف : مكنسة",
+                        arrowStr: "تنظيف ➔ هو وظيفة ➔ مكنسة",
+                        options: [
+                            { text: "أ. بري : مبرأة", correct: true, reason: "صحيحة! البري وظيفة المبرأة." },
+                            { text: "ب. مبرأة : بري", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. أتربة : غبار", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "د. بلاط : أرضية", correct: false, reason: "خاطئة! غطاء ومكان." }
+                        ],
+                        explanation: "التنظيف وظيفة المكنسة والبري وظيفة المبرأة."
+                    },
+                    {
+                        question: "وقاية : درع",
+                        arrowStr: "وقاية ➔ هي وظيفة ➔ درع",
+                        options: [
+                            { text: "أ. غمد : سيف", correct: false, reason: "خاطئة! وعاء ومحتوى." },
+                            { text: "ب. استظلال : مظلة", correct: true, reason: "صحيحة! الاستظلال وظيفة المظلة." },
+                            { text: "ج. مظلة : استظلال", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. شجاعة : محارب", correct: false, reason: "خاطئة! صفة وموصوف." }
+                        ],
+                        explanation: "الوقاية وظيفة الدرع والاستظلال وظيفة المظلة."
+                    }
+                ]
+            },
+            {
+                title: "18. المنتج والأصل (عكسي)",
+                icon: "fa-cubes",
+                badgeColor: "bg-rose-600 text-white",
+                borderColor: "border-rose-400",
+                textColor: "text-rose-700",
+                desc: "علاقة عكسية تبدأ بالمنتج المصنّع (اليمين) ثم المادة الخام الأولية التي صُنع منها (اليسار).",
+                arrowPattern: { start: "المنتج المصنّع", relation: "يُصنع ويُستخرج من ➔", end: "المادة الخام" },
+                example: "دقيق ➔ قمح",
+                analyses: [
+                    { pair: "بنزين ➔ نفط", type: "ورقة 1", note: "البنزين يُستخرج من النفط [منتج ➔ أصل]." },
+                    { pair: "طاولة ➔ خشب", type: "ورقة 2", note: "الطاولة تُصنع من الخشب [منتج ➔ أصل]." }
+                ],
+                quizzes: [
+                    {
+                        question: "جبن : حليب",
+                        arrowStr: "جبن ➔ يُصنع من ➔ حليب",
+                        options: [
+                            { text: "أ. طاولة : خشب", correct: true, reason: "صحيحة! الطاولة تصنع من الخشب (منتج ➔ أصل)." },
+                            { text: "ب. خشب : طاولة", correct: false, reason: "خاطئة! الاتجاه معكوس (أصل ➔ منتج)." },
+                            { text: "ج. حظيرة : بقرة", correct: false, reason: "خاطئة! مسكن وكائن." },
+                            { text: "د. قماش : قطن", correct: false, reason: "خاطئة! كلاهما صحيح، لكن الطاولة والخشب صناعة تحويلية مباشرة (أدق)." }
+                        ],
+                        explanation: "الجبن يُصنع من الحليب والطاولة تُصنع من الخشب."
+                    },
+                    {
+                        question: "دقيق : قمح",
+                        arrowStr: "دقيق ➔ يُنتج من ➔ قمح",
+                        options: [
+                            { text: "أ. سنبلة : مزرعة", correct: false, reason: "خاطئة! جزء ومكان." },
+                            { text: "ب. قماش : قطن", correct: true, reason: "صحيحة! القماش يُنسج ويُصنع من القطن." },
+                            { text: "ج. قطن : قماش", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. فرن : خبز", correct: false, reason: "خاطئة! مكان الطهي والمنتج." }
+                        ],
+                        explanation: "الدقيق يُصنع من القمح والقماش يُصنع من القطن."
+                    },
+                    {
+                        question: "بنزين : نفط",
+                        arrowStr: "بنزين ➔ يُستخرج من ➔ نفط",
+                        options: [
+                            { text: "أ. محرك : سيارة", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "ب. سكر : قصب", correct: true, reason: "صحيحة! السكر يُستخرج من قصب السكر." },
+                            { text: "ج. قصب : سكر", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. عمق : بئر", correct: false, reason: "خاطئة! صفة وموصوف." }
+                        ],
+                        explanation: "البنزين يُستخرج من النفط والسكر يُستخرج من القصب."
+                    },
+                    {
+                        question: "زجاج : رمل",
+                        arrowStr: "زجاج ➔ يُصنع من ➔ رمل",
+                        options: [
+                            { text: "أ. فخار : طين", correct: true, reason: "صحيحة! الفخار يُصنع من الطين." },
+                            { text: "ب. طين : فخار", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. كثبان : صحراء", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "د. ستارة : نافذة", correct: false, reason: "خاطئة! غطاء ومكان." }
+                        ],
+                        explanation: "الزجاج يُصنع من الرمل والفخار يُصنع من الطين."
+                    },
+                    {
+                        question: "سيف : حديد",
+                        arrowStr: "سيف ➔ يُصنع من ➔ حديد",
+                        options: [
+                            { text: "أ. منجم : معدن", correct: false, reason: "خاطئة! مكان وما يُستخرج منه." },
+                            { text: "ب. حذاء : جلود", correct: true, reason: "صحيحة! الحذاء يُصنع من الجلود." },
+                            { text: "ج. جلود : حذاء", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. رطوبة : صدأ", correct: false, reason: "خاطئة! سبب ونتيجة." }
+                        ],
+                        explanation: "السيف يُصنع من الحديد والحذاء يُصنع من الجلود."
+                    },
+                    {
+                        question: "زبيب : عنب",
+                        arrowStr: "زبيب ➔ أصله ➔ عنب",
+                        options: [
+                            { text: "أ. تمر : رطب", correct: true, reason: "صحيحة! التمر أصله رطب بعد التجفيف." },
+                            { text: "ب. رطب : تمر", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. شجرة : تفاح", correct: false, reason: "خاطئة! مصدر وثمرة." },
+                            { text: "د. كأس : عصير", correct: false, reason: "خاطئة! وعاء ومحتوى." }
+                        ],
+                        explanation: "الزبيب أصله عنب والتمر أصله رطب."
+                    },
+                    {
+                        question: "عباءة : صوف",
+                        arrowStr: "عباءة ➔ تُصنع من ➔ صوف",
+                        options: [
+                            { text: "أ. مرعى : خروف", correct: false, reason: "خاطئة! مكان وكائن." },
+                            { text: "ب. خاتم : ذهب", correct: true, reason: "صحيحة! الخاتم يُصنع من الذهب." },
+                            { text: "ج. ذهب : خاتم", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. معطف : برد", correct: false, reason: "خاطئة! أداة وقاية ومشكلة." }
+                        ],
+                        explanation: "العباءة تُصنع من الصوف والخاتم يُصنع من الذهب."
+                    },
+                    {
+                        question: "ورق : شجر",
+                        arrowStr: "ورق ➔ يُصنع من ➔ شجر",
+                        options: [
+                            { text: "أ. مكتبة : كتاب", correct: false, reason: "خاطئة! مكان ومحتوى." },
+                            { text: "ب. زيت : زيتون", correct: true, reason: "صحيحة! الزيت يُستخرج من الزيتون." },
+                            { text: "ج. زيتون : زيت", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. حبر : قلم", correct: false, reason: "خاطئة! محتوى ووعاء." }
+                        ],
+                        explanation: "الورق يُصنع من الشجر والزيت يُستخرج من الزيتون."
+                    },
+                    {
+                        question: "طحينة : سمسم",
+                        arrowStr: "طحينة ➔ تُصنع من ➔ سمسم",
+                        options: [
+                            { text: "أ. زيت : جوز الهند", correct: true, reason: "صحيحة! الزيت يُستخرج من جوز الهند." },
+                            { text: "ب. جوز الهند : زيت", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. مخبز : خبز", correct: false, reason: "خاطئة! مكان ومنتج." },
+                            { text: "د. طعام : ملح", correct: false, reason: "خاطئة! كل ومكون." }
+                        ],
+                        explanation: "الطحينة تُصنع من السمسم والزيت يُستخرج من جوز الهند."
+                    },
+                    {
+                        question: "بلاستيك : بترول",
+                        arrowStr: "بلاستيك ➔ يُصنع من ➔ بترول",
+                        options: [
+                            { text: "أ. عمال : مصنع", correct: false, reason: "خاطئة! أشخاص ومكان." },
+                            { text: "ب. شوكولاتة : كاكاو", correct: true, reason: "صحيحة! الشوكولاتة تُصنع من الكاكاو." },
+                            { text: "ج. كاكاو : شوكولاتة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. دخان : تلوث", correct: false, reason: "خاطئة! سبب ونتيجة." }
+                        ],
+                        explanation: "البلاستيك يُصنع من البترول والشوكولاتة تُصنع من الكاكاو."
+                    }
+                ]
+            },
+            {
+                title: "19. المآل والبداية (عكسي)",
+                icon: "fa-timeline",
+                badgeColor: "bg-cyan-600 text-white",
+                borderColor: "border-cyan-400",
+                textColor: "text-cyan-700",
+                desc: "علاقة عكسية تبدأ بالمرحلة المتقدمة أو النهائية (اليمين) ثم المرحلة الأولية التي نشأ عنها (اليسار).",
+                arrowPattern: { start: "المرحلة المتقدمة", relation: "كانت في بدايتها ➔", end: "المرحلة الأولية" },
+                example: "طفل ➔ جنين",
+                analyses: [
+                    { pair: "شجرة ➔ بذرة", type: "ورقة 1", note: "الشجرة أصلها بذرة [نهاية ➔ بداية]." },
+                    { pair: "فراشة ➔ يرقة", type: "ورقة 2", note: "الفراشة كانت يرقة [نهاية ➔ بداية]." }
+                ],
+                quizzes: [
+                    {
+                        question: "خبز : عجين",
+                        arrowStr: "خبز ➔ كان في البداية ➔ عجين",
+                        options: [
+                            { text: "أ. فراشة : يرقة", correct: true, reason: "صحيحة! الفراشة كانت يرقة (مرحلة متقدمة ➔ أولية)." },
+                            { text: "ب. يرقة : فراشة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. فاكهة : تفاح", correct: false, reason: "خاطئة! فئة ونوع." },
+                            { text: "د. خياط : ثوب", correct: false, reason: "خاطئة! صانع ومنتج." }
+                        ],
+                        explanation: "الخبز كان عجيناً والفراشة كانت يرقة."
+                    },
+                    {
+                        question: "طفل : جنين",
+                        arrowStr: "طفل ➔ كان في البداية ➔ جنين",
+                        options: [
+                            { text: "أ. حنان : أم", correct: false, reason: "خاطئة! صفة وموصوف." },
+                            { text: "ب. شجرة : بذرة", correct: true, reason: "صحيحة! الشجرة كانت بذرة." },
+                            { text: "ج. بذرة : شجرة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. طالب : مدرسة", correct: false, reason: "خاطئة! شخص ومكان." }
+                        ],
+                        explanation: "الطفل كان جنيناً والشجرة كانت بذرة."
+                    },
+                    {
+                        question: "شاب : طفل",
+                        arrowStr: "شاب ➔ كان قبله ➔ طفل",
+                        options: [
+                            { text: "أ. بدر : هلال", correct: true, reason: "صحيحة! البدر كان قبل ذلك هلالاً." },
+                            { text: "ب. هلال : بدر", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. ليل : نهار", correct: false, reason: "خاطئة! تضاد وتعاقب." },
+                            { text: "د. امرأة : رجل", correct: false, reason: "خاطئة! تقابل." }
+                        ],
+                        explanation: "الشاب كان طفلاً والبدر كان هلالاً."
+                    },
+                    {
+                        question: "زهرة : برعم",
+                        arrowStr: "زهرة ➔ كانت في البداية ➔ برعم",
+                        options: [
+                            { text: "أ. رائحة : عطر", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "ب. أسد : شبل", correct: true, reason: "صحيحة! الأسد كان في صغره شبلاً." },
+                            { text: "ج. شبل : أسد", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. ورقة : غصن", correct: false, reason: "خاطئة! جزء وكل." }
+                        ],
+                        explanation: "الزهرة كانت برعماً والأسد كان شبلاً."
+                    },
+                    {
+                        question: "حصان : مهر",
+                        arrowStr: "حصان ➔ كان في صغره ➔ مهر",
+                        options: [
+                            { text: "أ. لجام : سرج", correct: false, reason: "خاطئة! أدوات." },
+                            { text: "ب. كلب : جرو", correct: true, reason: "صحيحة! الكلب كان في صغره جرواً." },
+                            { text: "ج. جرو : كلب", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. لبؤة : عرين", correct: false, reason: "خاطئة! كائن ومسكن." }
+                        ],
+                        explanation: "الحصان كان مهراً والكلب كان جرواً."
+                    },
+                    {
+                        question: "علقة : نطفة",
+                        arrowStr: "علقة ➔ كانت قبلها ➔ نطفة",
+                        options: [
+                            { text: "أ. ضحى : فجر", correct: true, reason: "صحيحة! الضحى يسبقه الفجر." },
+                            { text: "ب. فجر : ضحى", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. قمر : شمس", correct: false, reason: "خاطئة! فئة واحدة." },
+                            { text: "د. أرض : سماء", correct: false, reason: "خاطئة! تضاد." }
+                        ],
+                        explanation: "العلقة تسبقها النطفة والضحى يسبقه الفجر."
+                    },
+                    {
+                        question: "كتكوت : بيضة",
+                        arrowStr: "كتكوت ➔ خرج من ➔ بيضة",
+                        options: [
+                            { text: "أ. عصفور : عش", correct: false, reason: "خاطئة! كائن ومسكن." },
+                            { text: "ب. فراشة : شرنقة", correct: true, reason: "صحيحة! الفراشة خرجت من الشرنقة." },
+                            { text: "ج. شرنقة : فراشة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. جناح : ريش", correct: false, reason: "خاطئة! كل وجزء." }
+                        ],
+                        explanation: "الكتكوت أصله بيضة والفراشة أصلها شرنقة."
+                    },
+                    {
+                        question: "جمل : حوار",
+                        arrowStr: "جمل ➔ كان في صغره ➔ حوار",
+                        options: [
+                            { text: "أ. تيس : جدي", correct: true, reason: "صحيحة! التيس كان في صغره جدياً." },
+                            { text: "ب. جدي : تيس", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. واحة : صحراء", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "د. حليب : ناقة", correct: false, reason: "خاطئة! منتج ومصدر." }
+                        ],
+                        explanation: "الجمل كان حواراً والتيس كان جدياً."
+                    },
+                    {
+                        question: "بخار : ماء",
+                        arrowStr: "بخار ➔ تحول من ➔ ماء",
+                        options: [
+                            { text: "أ. مطر : سحاب", correct: true, reason: "صحيحة! المطر تحول من السحاب." },
+                            { text: "ب. سحاب : مطر", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. نهر : بحر", correct: false, reason: "خاطئة! مسطحات مائية." },
+                            { text: "د. حرارة : نار", correct: false, reason: "خاطئة! صفة ومصدر." }
+                        ],
+                        explanation: "البخار أصله ماء والمطر أصله سحاب."
+                    },
+                    {
+                        question: "نخلة : فسيلة",
+                        arrowStr: "نخلة ➔ كانت في البداية ➔ فسيلة",
+                        options: [
+                            { text: "أ. شجرة : غرسة", correct: true, reason: "صحيحة! الشجرة كانت في البداية غرسة." },
+                            { text: "ب. غرسة : شجرة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. جريد : سعف", correct: false, reason: "خاطئة! أجزاء." },
+                            { text: "د. بئر : مزرعة", correct: false, reason: "خاطئة! جزء وكل." }
+                        ],
+                        explanation: "النخلة كانت فسيلة والشجرة كانت غرسة."
+                    }
+                ]
+            },
+            {
+                title: "20. الكل والجزء (عكسي)",
+                icon: "fa-cubes-stacked",
+                badgeColor: "bg-indigo-600 text-white",
+                borderColor: "border-indigo-400",
+                textColor: "text-indigo-700",
+                desc: "علاقة عكسية تبدأ بالكيان الكلي الأكبر (اليمين) ثم الجزء أو العضو المتفرع منه (اليسار).",
+                arrowPattern: { start: "الكل الأكبر", relation: "يتكون ويشتمل على ➔", end: "الجزء الأصغر" },
+                example: "منزل ➔ غرفة",
+                analyses: [
+                    { pair: "مدرسة ➔ فصل", type: "ورقة 1", note: "المدرسة تضم الفصول [كل ➔ جزء]." },
+                    { pair: "يد ➔ إصبع", type: "ورقة 2", note: "اليد جزء منها الإصبع [كل ➔ جزء]." }
+                ],
+                quizzes: [
+                    {
+                        question: "شجرة : غصن",
+                        arrowStr: "شجرة ➔ جزء منها ➔ غصن",
+                        options: [
+                            { text: "أ. يد : إصبع", correct: true, reason: "صحيحة! اليد كل وجزء منها الإصبع (كل ➔ جزء)." },
+                            { text: "ب. إصبع : يد", correct: false, reason: "خاطئة! الاتجاه معكوس (جزء ➔ كل)." },
+                            { text: "ج. معلومات : كتاب", correct: false, reason: "خاطئة! محتوى ووعاء." },
+                            { text: "د. كأس : فوز", correct: false, reason: "خاطئة! نتيجة وسبب." }
+                        ],
+                        explanation: "الشجرة جزء منها الغصن واليد جزء منها الإصبع."
+                    },
+                    {
+                        question: "منزل : غرفة",
+                        arrowStr: "منزل ➔ جزء منه ➔ غرفة",
+                        options: [
+                            { text: "أ. طلاء : جدار", correct: false, reason: "خاطئة! غطاء ومكان." },
+                            { text: "ب. مدرسة : فصل", correct: true, reason: "صحيحة! المدرسة تضم الفصل كجزء منها." },
+                            { text: "ج. فصل : مدرسة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. مفتاح : باب", correct: false, reason: "خاطئة! أداة ومرتبطها." }
+                        ],
+                        explanation: "المنزل جزء منه الغرفة والمدرسة جزء منها الفصل."
+                    },
+                    {
+                        question: "سورة : آية",
+                        arrowStr: "سورة ➔ جزء منها ➔ آية",
+                        options: [
+                            { text: "أ. تلاوة : مصحف", correct: false, reason: "خاطئة! فعل ومحل الفعل." },
+                            { text: "ب. كتاب : صفحة", correct: true, reason: "صحيحة! الكتاب يتكون من صفحات." },
+                            { text: "ج. صفحة : كتاب", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. حبر : قلم", correct: false, reason: "خاطئة! محتوى ووعاء." }
+                        ],
+                        explanation: "السورة جزء منها الآية والكتاب جزء منه الصفحة."
+                    },
+                    {
+                        question: "ساعة : دقيقة",
+                        arrowStr: "ساعة ➔ جزء منها ➔ دقيقة",
+                        options: [
+                            { text: "أ. أسبوع : يوم", correct: true, reason: "صحيحة! الأسبوع يتكون من أيام." },
+                            { text: "ب. يوم : أسبوع", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. زمن : وقت", correct: false, reason: "خاطئة! ترادف." },
+                            { text: "د. استيقاظ : منبه", correct: false, reason: "خاطئة! نتيجة وأداة." }
+                        ],
+                        explanation: "الساعة جزء منها الدقيقة والأسبوع جزء منه اليوم."
+                    },
+                    {
+                        question: "كلمة : حرف",
+                        arrowStr: "كلمة ➔ جزء منها ➔ حرف",
+                        options: [
+                            { text: "أ. فقرة : جملة", correct: true, reason: "صحيحة! الفقرة تتكون من جمل." },
+                            { text: "ب. جملة : فقرة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. لغة : معجم", correct: false, reason: "خاطئة! محتوى ووعاء." },
+                            { text: "د. قصيدة : شاعر", correct: false, reason: "خاطئة! منتج وصانعه." }
+                        ],
+                        explanation: "الكلمة جزء منها الحرف والفقرة جزء منها الجملة."
+                    },
+                    {
+                        question: "سيارة : عجلة",
+                        arrowStr: "سيارة ➔ جزء منها ➔ عجلة",
+                        options: [
+                            { text: "أ. سفر : طريق", correct: false, reason: "خاطئة! حدث ومكان." },
+                            { text: "ب. طائرة : جناح", correct: true, reason: "صحيحة! الطائرة جزء منها الجناح." },
+                            { text: "ج. جناح : طائرة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. محطة : وقود", correct: false, reason: "خاطئة! مكان ومحتوى." }
+                        ],
+                        explanation: "السيارة جزء منها العجلة والطائرة جزء منها الجناح."
+                    },
+                    {
+                        question: "فريق : لاعب",
+                        arrowStr: "فريق ➔ جزء منه ➔ لاعب",
+                        options: [
+                            { text: "أ. جمهور : ملعب", correct: false, reason: "خاطئة! أشخاص ومكان." },
+                            { text: "ب. كتيبة : جندي", correct: true, reason: "صحيحة! الكتيبة تضم الجندي كجزء منها." },
+                            { text: "ج. جندي : كتيبة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. خسارة : فوز", correct: false, reason: "خاطئة! تضاد." }
+                        ],
+                        explanation: "الفريق جزء منه اللاعب والكتيبة جزء منها الجندي."
+                    },
+                    {
+                        question: "مجرة : نجم",
+                        arrowStr: "مجرة ➔ جزء منها ➔ نجم",
+                        options: [
+                            { text: "أ. بحر : قطرة", correct: true, reason: "صحيحة! البحر يتكون من قطرات." },
+                            { text: "ب. قطرة : بحر", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "ج. ظلام : ليل", correct: false, reason: "خاطئة! صفة وزمان." },
+                            { text: "د. ضوء : شمس", correct: false, reason: "خاطئة! صفة ومصدر." }
+                        ],
+                        explanation: "المجرة جزء منها النجم والبحر جزء منه القطرة."
+                    },
+                    {
+                        question: "سفينة : شراع",
+                        arrowStr: "سفينة ➔ جزء منها ➔ شراع",
+                        options: [
+                            { text: "أ. أمواج : بحر", correct: false, reason: "خاطئة! جزء وكل." },
+                            { text: "ب. قارب : دفة", correct: true, reason: "صحيحة! القارب جزء منه الدفة." },
+                            { text: "ج. دفة : قارب", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. شبكة : سمك", correct: false, reason: "خاطئة! أداة وصيد." }
+                        ],
+                        explanation: "السفينة جزء منها الشراع والقارب جزء منه الدفة."
+                    },
+                    {
+                        question: "تمرة : نواة",
+                        arrowStr: "تمرة ➔ بداخلها ➔ نواة",
+                        options: [
+                            { text: "أ. مزرعة : نخلة", correct: false, reason: "خاطئة! مكان وجزء." },
+                            { text: "ب. تفاحة : بذرة", correct: true, reason: "صحيحة! التفاحة بداخلها بذرة." },
+                            { text: "ج. بذرة : تفاحة", correct: false, reason: "خاطئة! الاتجاه معكوس." },
+                            { text: "د. سكر : حلاوة", correct: false, reason: "خاطئة! مصدر وصفة." }
+                        ],
+                        explanation: "التمرة جزء منها النواة والتفاحة جزء منها البذرة."
+                    }
+                ]
+            },
+            
 
             // =====================================================================
             // 🟢 الصق أي علاقة جديدة هنا مباشرة تحت هذا السطر (لا تحذف القوس بالأسفل)
